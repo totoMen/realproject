@@ -1,0 +1,25 @@
+@mixin flex( $a, $b, $c, $d ){
+	display			: flex;
+	flex-flow		  : $a $b;
+	justify-content	: $c;
+	@if $b == 'nowrap' {
+		align-items		: $d;	
+	}@else{
+		align-content	: $d;
+	}	
+}
+
+@mixin position ( $a , $b , $c , $d) {
+	position: fixed;
+	top: $a;
+	left: $b;
+	right: $c;
+	bottom: $d;
+}
+
+@mixin mv ( $medida : 700px ) {
+	@media ( max-width: $medida ) {
+		@content
+    }
+}
+
